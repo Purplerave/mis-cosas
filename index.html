@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mis cosas — Pablo</title>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:#0b0714;color:#f2eefc;line-height:1.45}
+  a{color:#67e8f9;text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1060px;margin:0 auto;padding:16px 14px 48px}
+  /* HERO */
+  .hero{border-radius:24px;padding:52px 22px 30px;overflow:hidden;
+    background:linear-gradient(180deg,rgba(11,7,20,.55),rgba(11,7,20,.92)),url("https://cintter.com.br/Loja/Imagens/vibrantpurplebluenebuladeepspace1662026165047124.jpg") center/cover;
+    border:1px solid #3b2a6e;box-shadow:0 20px 60px rgba(139,92,246,.35)}
+  .hero h1{margin:0;font-size:clamp(42px,9vw,76px);letter-spacing:-1px;line-height:1;text-shadow:0 4px 24px rgba(0,0,0,.7)}
+  .hero h1 span{color:#c084fc}
+  .hero p{max-width:640px;font-size:clamp(16px,3.5vw,20px);color:#e6dcff;text-shadow:0 2px 12px rgba(0,0,0,.8)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .chips a{display:inline-block;background:rgba(139,92,246,.28);border:1px solid #8b5cf6;color:#fff;padding:7px 14px;border-radius:999px;font-size:14px;font-weight:600}
+  /* SECCIONES */
+  section{margin-top:44px}
+  h2{font-size:clamp(24px,5vw,32px);margin:0 0 6px}
+  h2 .bar{display:block;height:4px;width:64px;border-radius:99px;background:linear-gradient(90deg,#8b5cf6,#22d3ee);margin-top:8px}
+  .sub{color:#b7aed0;margin:0 0 18px;font-size:15px}
+  h3{font-size:19px;margin:26px 0 12px;color:#e9d5ff}
+  /* NOTICIAS */
+  .news{display:grid;gap:12px}
+  .noticia{background:#17102a;border:1px solid #2e2160;border-left:5px solid #8b5cf6;border-radius:14px;padding:14px 16px}
+  .noticia.real{border-left-color:#22d3ee}
+  .noticia .meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12px;margin-bottom:6px}
+  .badge{display:inline-block;padding:2px 9px;border-radius:999px;font-weight:700;letter-spacing:.4px}
+  .badge.fic{background:#8b5cf6;color:#fff}
+  .badge.real{background:#22d3ee;color:#082f3a}
+  .badge.fecha{background:#2a1e4f;color:#d8ccff}
+  .noticia h4{margin:0 0 4px;font-size:17px;line-height:1.3}
+  .noticia p{margin:0;color:#cfc4ec;font-size:14px}
+  /* TARJETAS */
+  .grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+  .card{background:linear-gradient(160deg,#241743,#120b26);border:1px solid #2e2160;border-radius:16px;overflow:hidden}
+  .card .img{aspect-ratio:2/3;display:flex;align-items:flex-end;background:linear-gradient(160deg,#4c1d95,#0e7490)}
+  .card .img img{width:100%;height:100%;object-fit:cover;display:block}
+  .card .img span{padding:12px;font-weight:800;font-size:19px;line-height:1.15;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+  .card .body{padding:11px 12px 13px}
+  .card .body b{display:block;font-size:15px;line-height:1.25}
+  .card .body small{color:#b7aed0;font-size:12.5px}
+  .tag{display:inline-block;margin-top:6px;background:#2a1e4f;color:#d8ccff;border-radius:999px;padding:2px 9px;font-size:11.5px}
+  .tag.cyan{background:#164e63;color:#a5f3fc}
+  .tag.amber{background:#451a03;color:#fde68a}
+  .tag.rose{background:#4c0519;color:#fbcfe8}
+  .tag.green{background:#052e16;color:#bbf7d0}
+  /* CALENDARIO */
+  .cal{display:grid;gap:10px;grid-template-columns:repeat(2,1fr)}
+  @media(min-width:700px){.cal{grid-template-columns:repeat(4,1fr)}}
+  @media(min-width:1000px){.cal{grid-template-columns:repeat(7,1fr)}}
+  .dia{background:#17102a;border:1px solid #2e2160;border-radius:14px;padding:10px;min-height:118px;position:relative;overflow:hidden}
+  .dia .num{font-size:22px;font-weight:800;color:#c084fc}
+  .dia .t{font-size:13.5px;line-height:1.25;font-weight:600}
+  .dia .p{font-size:11.5px;color:#b7aed0}
+  .dia.hoy{outline:3px solid #facc15;box-shadow:0 0 24px rgba(250,204,21,.45)}
+  .dia.hoy .hoy-badge{position:absolute;top:8px;right:8px;background:#facc15;color:#422006;font-size:11px;font-weight:800;padding:2px 8px;border-radius:999px}
+  .dia.pend{border:1px dashed #8b5cf6}
+  .dia .img-mini{height:74px;margin:-10px -10px 8px;background:linear-gradient(160deg,#4c1d95,#0e7490);overflow:hidden}
+  .dia .img-mini img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+  /* GUSTOS */
+  .gustos{display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}
+  @media(min-width:700px){.gustos{grid-template-columns:repeat(3,1fr)}}
+  .gusto{border-radius:18px;padding:20px 16px;text-align:center;font-weight:700;font-size:17px}
+  .gusto span{display:block;font-size:34px;margin-bottom:6px}
+  .gusto small{display:block;font-weight:400;font-size:13px;color:#e6dcff;opacity:.9;margin-top:4px}
+  .g1{background:linear-gradient(150deg,#7c2d12,#450a0a)}
+  .g2{background:linear-gradient(150deg,#4c1d95,#1e1b4b)}
+  .g3{background:linear-gradient(150deg,#831843,#3b0764)}
+  .g4{background:linear-gradient(150deg,#1e3a8a,#172554)}
+  .g5{background:linear-gradient(150deg,#7f1d1d,#450a0a)}
+  .g6{background:linear-gradient(150deg,#0e7490,#164e63)}
+  footer{margin-top:48px;text-align:center;color:#8f83b3;font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HERO -->
+  <header class="hero">
+    <h1>Mis <span>cosas</span></h1>
+    <p>La página de Pablo. Terror, Stephen King, Expediente X, Prince, el Dépor y la Fórmula 1. Todo lo que me gusta, en un solo sitio.</p>
+    <div class="chips">
+      <a href="#expediente">👽 Expediente X</a>
+      <a href="#terror">🎃 Terror en octubre</a>
+      <a href="#libros">📚 Para leer</a>
+      <a href="#maraton">🎃 Maratón 6–31 oct</a>
+      <a href="#gustos">❤️ Gustos</a>
+    </div>
+  </header>
+
+  <!-- EXPEDIENTE X -->
+  <section id="expediente">
+    <h2>👽 Expediente X y noticias reales<span class="bar"></span></h2>
+    <p class="sub">La verdad está ahí fuera. Noticias de la serie nueva y de casos reales: ovnis, UAP, desclasificaciones e informes oficiales. Esta sección se alimenta del radar diario de noticias.</p>
+
+    <h3>📰 Últimas noticias</h3>
+    <div class="news">
+      <article class="noticia">
+        <div class="meta"><span class="badge fic">FICCIÓN</span><span class="badge fecha">23/10/2026</span></div>
+        <h4><a href="https://www.aullidos.com/noticia/45164/reboot-expediente-x-podria-continuar-historia-mulder-scully/">El reboot de Expediente X podría continuar la historia de Mulder y Scully</a></h4>
+        <p>La división clausurada que reabren los nuevos agentes encaja con el departamento original de Mulder y Scully: la puerta a cameos y a reabrir viejos casos queda abierta, sin confirmar nada.</p>
+      </article>
+      <article class="noticia real">
+        <div class="meta"><span class="badge real">REAL</span><span class="badge fecha">23/10/2026</span></div>
+        <h4><a href="https://mysteryplanet.com.ar/site/el-pentagono-revela-un-misterioso-ovni-triangular-negro-en-su-septima-tanda-de-archivos-desclasificados/">El Pentágono desclasifica el caso del OVNI triangular negro</a></h4>
+        <p>Séptima tanda PURSUE del Pentágono: tres agentes federales vieron en junio de 2026 un triángulo negro mate que ascendió en vertical, quedó suspendido y recorrió 2,5 km en menos de 3 segundos, sin sonido ni propulsión visible.</p>
+      </article>
+      <article class="noticia real">
+        <div class="meta"><span class="badge real">REAL</span><span class="badge fecha">23/10/2026</span></div>
+        <h4><a href="https://elseis.do/noticias/estados-unidos-desclasifica-informes-de-avistamientos-de-ovnis-en-la-isla-catalina">Desclasificados informes OVNI de la Isla Catalina desde 1947</a></h4>
+        <p>La misma tanda incluye informes históricos de la Isla Catalina (California): una carta de 1947 con seis objetos luminosos y el caso de los Boy Scouts de 1952 con un objeto plateado más rápido que un reactor.</p>
+      </article>
+      <article class="noticia real">
+        <div class="meta"><span class="badge real">REAL</span><span class="badge fecha">23/10/2026</span></div>
+        <h4><a href="https://particle.news/story/government-releases-new-uap-files-including-matteblack-triangle-seen-by-federal-agents">La tanda desclasificada incluye el informe del rancho Skinwalker</a></h4>
+        <p>La séptima tanda también incluye un informe de 2010 con testimonios sobre actividad extraña en el rancho Skinwalker (Utah). Los documentos recogen los testimonios sin establecer qué ocurrió.</p>
+      </article>
+      <article class="noticia real">
+        <div class="meta"><span class="badge real">REAL</span><span class="badge fecha">17/10/2026</span></div>
+        <h4><a href="https://www.usatoday.com/story/news/nation/2026/10/09/ufo-reports-nasa-jared-isaacman-open-minded/92116111007/">El jefe de la NASA pide mente abierta sobre los ovnis</a></h4>
+        <p>El administrador de la NASA, Jared Isaacman, pide mantener la mente abierta sobre los ovnis ante el aumento de informes UAP y la liberación de archivos ordenada por Trump.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge fic">FICCIÓN</span><span class="badge fecha">14/10/2026</span></div>
+        <h4><a href="https://as.com/meristation/series/es-oficial-la-nueva-expediente-x-es-una-secuela-de-la-serie-protagonizada-por-mulder-y-scully-f202610-n/">Oficial: la nueva Expediente X será una secuela, no un reboot</a></h4>
+        <p>Hulu da luz verde a la temporada completa de la nueva Expediente X de Ryan Coogler: secuela en continuidad, con dos agentes nuevos (Danielle Deadwyler y Himesh Patel). Mulder y Scully, sin confirmar.</p>
+      </article>
+    </div>
+
+    <h3>🎬 Pelis de siempre</h3>
+    <div class="grid">
+      <div class="card"><div class="img"><img src="https://cdn11.bigcommerce.com/s-nq6l4syi/images/stencil/1280x1280/products/105886/235611/159435-1024__84466.1607102384.jpg?c=2?imbypass=on" alt="Expediente X"></div><div class="body"><b>Expediente X: la película</b><small>1998 · Mulder y Scully en la gran pantalla</small></div></div>
+      <div class="card"><div class="img"><span>Encuentros en la tercera fase</span></div><div class="body"><b>Encuentros en la tercera fase</b><small>Spielberg · El clásico de los contactos</small></div></div>
+      <div class="card"><div class="img"><span>E.T.</span></div><div class="body"><b>E.T., el extraterrestre</b><small>El amigo de toda una generación</small></div></div>
+      <div class="card"><div class="img"><img src="https://iili.io/3UKnkSR.jpg" alt="Alien"></div><div class="body"><b>Alien</b><small>1979 · En el espacio nadie puede oír tus gritos</small></div></div>
+      <div class="card"><div class="img"><span>La llegada</span></div><div class="body"><b>La llegada (Arrival)</b><small>Cuando llegan, lo primero es entenderlos</small></div></div>
+      <div class="card"><div class="img"><span>Contact</span></div><div class="body"><b>Contact</b><small>Una señal del espacio que lo cambia todo</small></div></div>
+      <div class="card"><div class="img"><span>Señales</span></div><div class="body"><b>Señales</b><small>Círculos en los campos de maíz</small></div></div>
+      <div class="card"><div class="img"><span>Distrito 9</span></div><div class="body"><b>Distrito 9</b><small>Ellos llegaron… y se quedaron</small></div></div>
+      <div class="card"><div class="img"><span>Paul</span></div><div class="body"><b>Paul</b><small>El extraterrestre más gamberro</small></div></div>
+    </div>
+
+    <h3>📺 Series de siempre</h3>
+    <div class="grid">
+      <div class="card"><div class="img"><img src="https://cdn11.bigcommerce.com/s-nq6l4syi/images/stencil/1280x1280/products/105886/235611/159435-1024__84466.1607102384.jpg?c=2?imbypass=on" alt="Expediente X"></div><div class="body"><b>Expediente X</b><small>La imprescindible · Mulder y Scully</small></div></div>
+      <div class="card"><div class="img"><span>V</span></div><div class="body"><b>V</b><small>Los visitantes que venían en son de paz… o no</small></div></div>
+      <div class="card"><div class="img"><span>Falling Skies</span></div><div class="body"><b>Falling Skies</b><small>La resistencia tras la invasión</small></div></div>
+      <div class="card"><div class="img"><span>Invasión</span></div><div class="body"><b>Invasión (Invasion)</b><small>La invasión contada desde abajo</small></div></div>
+      <div class="card"><div class="img"><span>Los visitantes</span></div><div class="body"><b>Los visitantes</b><small>Visitantes con segundas intenciones</small></div></div>
+    </div>
+
+    <h3>🛸 Avistamientos famosos</h3>
+    <div class="grid">
+      <div class="card"><div class="img"><span>Roswell</span></div><div class="body"><b>Roswell</b><small>1947 · El caso que lo empezó todo</small></div></div>
+      <div class="card"><div class="img"><span>Luces de Phoenix</span></div><div class="body"><b>Luces de Phoenix</b><small>1997 · Miles de testigos en Arizona</small></div></div>
+      <div class="card"><div class="img"><span>Rendlesham</span></div><div class="body"><b>Rendlesham</b><small>1980 · El «Roswell británico»</small></div></div>
+      <div class="card"><div class="img"><span>Tic Tac</span></div><div class="body"><b>El caso Nimitz «Tic Tac»</b><small>2004 · El vídeo que reabrió el debate</small></div></div>
+      <div class="card"><div class="img"><span>Informe UAP</span></div><div class="body"><b>El informe del Pentágono sobre UAP</b><small>El gobierno admite que hay cosas sin explicar</small></div></div>
+    </div>
+  </section>
+
+  <!-- TERROR EN OCTUBRE -->
+  <section id="terror">
+    <h2>🎃 Terror en octubre<span class="bar"></span></h2>
+    <p class="sub">Para ver: lo nuevo, lo que viene y lo pendiente. Sin listas aburridas: tarjetas y a elegir.</p>
+
+    <h3>🎬 Para ver</h3>
+    <div class="grid">
+      <div class="card"><div class="img"><span>Evil Dead Burn</span></div><div class="body"><b>Evil Dead Burn</b><small>Dir. Sébastien Vaniček</small><br><span class="tag cyan">HBO Max · desde el 2/10</span></div></div>
+      <div class="card"><div class="img"><span>La otra madre</span></div><div class="body"><b>La otra madre</b><small>Rob Savage · Jessica Chastain</small><br><span class="tag amber">Cines · 9/10</span></div></div>
+      <div class="card"><div class="img"><span>Below</span></div><div class="body"><b>Below</b><small>Serie · Josh Hartnett, Mackenzie Davis, Charlie Heaton</small><br><span class="tag rose">Netflix · 8/10</span></div></div>
+      <div class="card"><div class="img"><span>Hope: El primer impacto</span></div><div class="body"><b>Hope: El primer impacto</b><small>Dir. Na Hong-jin</small><br><span class="tag amber">Cines · 8/10</span></div></div>
+      <div class="card"><div class="img"><img src="https://m.media-amazon.com/images/S/pv-target-images/f018f42701a99e6f9502d2c1b11206e77bcf91a6d0ce7e5ceaa34888c6149c1b.jpg" alt="The Monkey"></div><div class="body"><b>The Monkey</b><small>Osgood Perkins · Relato de Stephen King</small><br><span class="tag green">Prime Video · Vista en cines, ¡le gustó mucho!</span></div></div>
+      <div class="card"><div class="img"><span>The Swallow</span></div><div class="body"><b>The Swallow</b><small>2026 · Kölsch y Widmyer · Grace Van Dien</small><br><span class="tag">Fantastic Fest sept 2026 · Sin streaming aún</span><br><small>King: «the perfect drive-in movie!»</small></div></div>
+      <div class="card"><div class="img"><span>Cazafantasmas 6</span></div><div class="body"><b>Cazafantasmas 6: «Nightmare at 34th Street»</b><small>En desarrollo · Pinta navideña</small><br><span class="tag rose">Netflix prepara la serie «Night Shift»</span></div></div>
+      <div class="card"><div class="img"><span>Shrek 5</span></div><div class="body"><b>Shrek 5</b><small>Junio de 2027</small><br><span class="tag">En 2028, peli de Burro</span></div></div>
+    </div>
+
+    <h3>📺 Series que vienen</h3>
+    <div class="grid">
+      <div class="card"><div class="img"><span>Crystal Lake</span></div><div class="body"><b>Crystal Lake</b><small>Precuela de Viernes 13 · Linda Cardellini</small></div></div>
+      <div class="card"><div class="img"><span>Carrie</span></div><div class="body"><b>Carrie</b><small>Miniserie · 8 episodios</small></div></div>
+      <div class="card"><div class="img"><span>VisionQuest</span></div><div class="body"><b>VisionQuest</b><small>Marvel · Disney+ España · James Spader vuelve como Ultrón</small></div></div>
+    </div>
+
+    <h3>📌 Pendientes</h3>
+    <div class="grid">
+      <div class="card"><div class="img"><span>La otra madre</span></div><div class="body"><b>La otra madre</b><small>Peli pendiente</small></div></div>
+      <div class="card"><div class="img"><span>Insidious</span></div><div class="body"><b>Insidious: Fuera del más allá</b><small>Peli pendiente</small></div></div>
+      <div class="card"><div class="img"><span>Fall 2</span></div><div class="body"><b>Fall 2</b><small>Cines · 25/9/2026</small></div></div>
+      <div class="card"><div class="img"><span>Lanterns</span></div><div class="body"><b>Lanterns</b><small>Serie pendiente · HBO Max</small></div></div>
+    </div>
+  </section>
+
+  <!-- LIBROS -->
+  <section id="libros">
+    <h2>📚 Para leer<span class="bar"></span></h2>
+    <p class="sub">Novedades y pendientes. Truculentos, fáciles de leer y sin saltos temporales, como le gustan a Pablo.</p>
+    <div class="grid">
+      <div class="card"><div class="img"><span>Otros mundos</span></div><div class="body"><b>Otros mundos</b><small>Stephen King y Peter Straub · Plaza &amp; Janés</small><br><span class="tag cyan">15/10</span></div></div>
+      <div class="card"><div class="img"><span>Todo pasa en Derry</span></div><div class="body"><b>Todo pasa en Derry</b><small>Estuche · Debolsillo</small><br><span class="tag cyan">8/10</span></div></div>
+      <div class="card"><div class="img"><span>Truth to Power</span></div><div class="body"><b>Truth to Power</b><small>S. A. Cosby · En inglés</small><br><span class="tag cyan">13/10/2026</span></div></div>
+      <div class="card"><div class="img"><span>Los del otro lado</span></div><div class="body"><b>Los del otro lado</b><small>Christopher Buehlman · Oz</small><br><span class="tag cyan">5/10/2026</span></div></div>
+      <div class="card"><div class="img"><span>Cuentos de Poe</span></div><div class="body"><b>Cuentos de Edgar Allan Poe</b><small>El maestro del cuento oscuro</small></div></div>
+      <div class="card"><div class="img"><span>Circe</span></div><div class="body"><b>«Circe»</b><small>Julio Cortázar</small></div></div>
+      <div class="card"><div class="img"><span>El hombre del traje negro</span></div><div class="body"><b>«El hombre del traje negro»</b><small>Stephen King</small></div></div>
+      <div class="card"><div class="img"><span>La condesa sangrienta</span></div><div class="body"><b>«La condesa sangrienta»</b><small>Terror gótico de verdad</small></div></div>
+      <div class="card"><div class="img"><span>ALGUIEN</span></div><div class="body"><b>«ALGUIEN»</b><small>J. N. Trujillo · Slasher</small><br><span class="tag amber">e-book 3,95 € hasta el 1/11/2026</span></div></div>
+    </div>
+
+    <h3>📖 Cuando termine «El Talismán»</h3>
+    <div class="grid">
+      <div class="card"><div class="img"><span>El cuarto mono</span></div><div class="body"><b>El cuarto mono</b><small>J. D. Barker</small></div></div>
+      <div class="card"><div class="img"><span>Muñeca de trapo</span></div><div class="body"><b>Muñeca de trapo</b><small>Daniel Cole</small></div></div>
+      <div class="card"><div class="img"><span>El hombre pájaro</span></div><div class="body"><b>El hombre pájaro</b><small>Mo Hayder</small></div></div>
+      <div class="card"><div class="img"><span>Flores cortadas</span></div><div class="body"><b>Flores cortadas</b><small>Karin Slaughter</small></div></div>
+    </div>
+  </section>
+
+  <!-- MARATÓN -->
+  <section id="maraton">
+    <h2>🎃 Maratón de 26 noches · 6–31 de octubre<span class="bar"></span></h2>
+    <p class="sub">Día a día, sin saltarse ninguno. El 24 está marcado como hoy.</p>
+    <div class="cal">
+      <div class="dia"><div class="num">6</div><div class="t">Other Worlds Than These</div><div class="p">📖 Libro de King, en inglés</div></div>
+      <div class="dia"><div class="num">7</div><div class="t">Carrie</div><div class="p">Prime Video · Miniserie de Flanagan, 8 ep.</div></div>
+      <div class="dia"><div class="num">8</div><div class="t">Below</div><div class="p">Netflix · Además: sale «Todo pasa en Derry»</div></div>
+      <div class="dia"><div class="img-mini"><img src="https://i.pinimg.com/originals/2e/23/40/2e2340da9f89094f4fb0ddc35c2826e4.jpg" alt="Scream"></div><div class="num">9</div><div class="t">Scream</div><div class="p">Netflix</div></div>
+      <div class="dia"><div class="img-mini"><img src="https://i.pinimg.com/originals/2e/23/40/2e2340da9f89094f4fb0ddc35c2826e4.jpg" alt="Scream"></div><div class="num">10</div><div class="t">Scream 2</div><div class="p">Saga Scream</div></div>
+      <div class="dia"><div class="num">11</div><div class="t">La huérfana</div><div class="p">Terror de los que se quedan</div></div>
+      <div class="dia"><div class="num">12</div><div class="t">Pecadores / Sinners</div><div class="p">Terror con música y sangre</div></div>
+      <div class="dia"><div class="num">13</div><div class="t">La purga. La noche de las bestias</div><div class="p">Una noche al año, todo vale</div></div>
+      <div class="dia"><div class="num">14</div><div class="t">Prefiero la muerte</div><div class="p">Prime Video · Serie mexicana: zombis + comedia + romance</div></div>
+      <div class="dia"><div class="num">15</div><div class="t">The Babysitter</div><div class="p">La niñera no era lo que parecía</div></div>
+      <div class="dia"><div class="num">16</div><div class="t">Sangrientos dieciséis / Totally Killer</div><div class="p">Slasher con viaje en el tiempo</div></div>
+      <div class="dia"><div class="num">17</div><div class="t">Ouija: el origen del mal</div><div class="p">No juegues con el tablero</div></div>
+      <div class="dia pend"><div class="num">18</div><div class="t">Pendiente de reasignar</div><div class="p">¿Qué vemos esta noche?</div></div>
+      <div class="dia"><div class="num">19</div><div class="t">Los hilos del miedo</div><div class="p">Prime Video</div></div>
+      <div class="dia"><div class="img-mini"><img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2//ahTfI0eghHfwtMTm4HcNgametxT.jpg" alt="Halloween 2018"></div><div class="num">20</div><div class="t">Halloween 2018</div><div class="p">Vuelve Michael Myers</div></div>
+      <div class="dia"><div class="num">21</div><div class="t">Halloween Kills</div><div class="p">Myers no perdona</div></div>
+      <div class="dia"><div class="num">22</div><div class="t">La sustancia</div><div class="p">Vista · No le gustó</div></div>
+      <div class="dia"><div class="num">23</div><div class="t">Piedad</div><div class="p">Prime Video · Relato «Gramma» de King</div></div>
+      <div class="dia hoy"><span class="hoy-badge">HOY</span><div class="num">24</div><div class="t">Noche de lectura</div><div class="p">«Todo pasa en Derry» · Hoy, 24/10</div></div>
+      <div class="dia"><div class="img-mini"><img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2//w5YZEI7jiDiR2vJdNNmbg2xf5Ja.jpg" alt="El cadáver de la novia"></div><div class="num">25</div><div class="t">El cadáver de la novia</div><div class="p">Tim Burton · La novia cadáver</div></div>
+      <div class="dia"><div class="num">26</div><div class="t">The Bondsman</div><div class="p">Prime Video · Kevin Bacon</div></div>
+      <div class="dia pend"><div class="num">27</div><div class="t">Pendiente de reasignar</div><div class="p">¿Qué vemos esta noche?</div></div>
+      <div class="dia"><div class="num">28</div><div class="t">Ouija</div><div class="p">El tablero vuelve a moverse</div></div>
+      <div class="dia"><div class="img-mini"><img src="https://i.pinimg.com/originals/2e/23/40/2e2340da9f89094f4fb0ddc35c2826e4.jpg" alt="Scream"></div><div class="num">29</div><div class="t">Scream 3</div><div class="p">Saga Scream</div></div>
+      <div class="dia"><div class="num">30</div><div class="t">Apocalipsis Z: Nuevo Mundo</div><div class="p">Prime Video</div></div>
+      <div class="dia"><div class="num">31</div><div class="t">De noche con el diablo</div><div class="p">Netflix · Halloween por todo lo alto</div></div>
+    </div>
+  </section>
+
+  <!-- GUSTOS -->
+  <section id="gustos">
+    <h2>❤️ Gustos y aficiones<span class="bar"></span></h2>
+    <p class="sub">Lo que me mueve, en una mirada.</p>
+    <div class="gustos">
+      <div class="gusto g1"><span>🎬</span>Cine de terror<small>Del clásico al serie Z, sin gore excesivo</small></div>
+      <div class="gusto g2"><span>📖</span>Novelas de Stephen King<small>El maestro del terror, siempre</small></div>
+      <div class="gusto g3"><span>🎵</span>Prince<small>La pasión número 1, desde los 12 años</small></div>
+      <div class="gusto g4"><span>⚽</span>El Dépor<small>Blanquiazul, anticeltista, siempre</small></div>
+      <div class="gusto g5"><span>🏎️</span>Fórmula 1<small>Fernando Alonso · Aston Martin</small></div>
+      <div class="gusto g6"><span>👽</span>«I want to believe»<small>Expediente X: la verdad está ahí fuera</small></div>
+    </div>
+  </section>
+
+  <footer>
+    Página de Pablo · Hecha con cariño por Tecnotron 🤖 · Las noticias de Expediente X se actualizan con el radar diario.
+  </footer>
+
+</div>
+</body>
+</html>
