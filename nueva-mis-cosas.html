@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mis cosas — Pablo</title>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:#0b0714;color:#f2eefc;line-height:1.45}
+  a{color:#67e8f9;text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1060px;margin:0 auto;padding:16px 14px 48px}
+  /* HERO */
+  .hero{border-radius:24px;padding:52px 22px 30px;overflow:hidden;
+    background:linear-gradient(180deg,rgba(11,7,20,.55),rgba(11,7,20,.92)),url("https://cintter.com.br/Loja/Imagens/vibrantpurplebluenebuladeepspace1662026165047124.jpg") center/cover;
+    border:1px solid #3b2a6e;box-shadow:0 20px 60px rgba(139,92,246,.35)}
+  .hero h1{margin:0;font-size:clamp(42px,9vw,76px);letter-spacing:-1px;line-height:1;text-shadow:0 4px 24px rgba(0,0,0,.7)}
+  .hero h1 span{color:#c084fc}
+  .hero p{max-width:640px;font-size:clamp(16px,3.5vw,20px);color:#e6dcff;text-shadow:0 2px 12px rgba(0,0,0,.8)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .chips a{display:inline-block;background:rgba(139,92,246,.28);border:1px solid #8b5cf6;color:#fff;padding:7px 14px;border-radius:999px;font-size:14px;font-weight:600}
+  /* SECCIONES */
+  section{margin-top:44px}
+  h2{font-size:clamp(24px,5vw,32px);margin:0 0 6px}
+  h2 .bar{display:block;height:4px;width:64px;border-radius:99px;background:linear-gradient(90deg,#8b5cf6,#22d3ee);margin-top:8px}
+  .sub{color:#b7aed0;margin:0 0 18px;font-size:15px}
+  h3{font-size:19px;margin:26px 0 12px;color:#e9d5ff}
+  /* LISTAS */
+  .news{display:grid;gap:12px}
+  .noticia{background:#17102a;border:1px solid #2e2160;border-left:5px solid #8b5cf6;border-radius:14px;padding:14px 16px}
+  .noticia.real{border-left-color:#22d3ee}
+  .noticia .meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12px;margin-bottom:6px}
+  .badge{display:inline-block;padding:2px 9px;border-radius:999px;font-weight:700;letter-spacing:.4px}
+  .badge.fic{background:#8b5cf6;color:#fff}
+  .badge.real{background:#22d3ee;color:#082f3a}
+  .badge.fecha{background:#2a1e4f;color:#d8ccff}
+  .badge.salud{background:#052e16;color:#bbf7d0}
+  .badge.tec{background:#164e63;color:#a5f3fc}
+  .badge.terror{background:#7f1d1d;color:#fecaca}
+  .badge.prox{background:#facc15;color:#422006}
+  .noticia h4{margin:0 0 4px;font-size:17px;line-height:1.3}
+  .noticia p{margin:0;color:#cfc4ec;font-size:14px}
+  footer{margin-top:48px;text-align:center;color:#8f83b3;font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HERO -->
+  <header class="hero">
+    <h1>Mis <span>cosas</span></h1>
+    <p>Libros, pelis y noticias de terror. Cada cosa en su sitio. Actualizado el 25/11/2026.</p>
+    <div class="chips">
+      <a href="#libros">📚 Libros</a>
+      <a href="#pelis">🎬 Pelis de terror</a>
+      <a href="#noticias">📰 Noticias</a>
+    </div>
+  </header>
+
+  <!-- LIBROS -->
+  <section id="libros">
+    <h2>📚 Libros<span class="bar"></span></h2>
+    <p class="sub">Terror y policiaca. Fantasmas, slasher y asesinos en serie. Sin maltratos en casa, sin saltos en el tiempo, fáciles de leer. Solo la lista.</p>
+    <div class="news">
+      <article class="noticia">
+        <div class="meta"><span class="badge salud">LEYENDO AHORA</span><span class="badge fecha">2025 · NOCTURNA</span></div>
+        <h4>Antes vivíamos aquí — Marcus Kliewer</h4>
+        <p>Una mujer vuelve con su familia a la casa en la que vivió de niña. La casa no está vacía. Casa encantada, 303 páginas.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge prox">EL SIGUIENTE</span><span class="badge fecha">CARFAX</span></div>
+        <h4>Mi corazón es una motosierra — Stephen Graham Jones</h4>
+        <p>El primero de la trilogía Indian Lake: una chica obsesionada con el slasher se convierte en la final girl de su propio pueblo. Después, «No temas al segador» y «El ángel del lago Indian» (este último salió en español en 2025).</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">ASESINOS</span><span class="badge fecha">2025 · PLAZA &amp; JANÉS</span></div>
+        <h4>No tengas miedo — Stephen King</h4>
+        <p>Un asesino avisa por carta de que va a matar a trece inocentes y a un culpable, y la detective Holly Gibney tiene que pararlo antes de que cumpla su venganza.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">ASESINOS</span><span class="badge fecha">2025 · LUMEN</span></div>
+        <h4>Victorian Psycho — Virginia Feito</h4>
+        <p>Una institutriz que es una psicópata se coloca en una mansión victoriana, y la casa esconde tantos secretos como ella.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge fic">FANTASMAS</span><span class="badge fecha">2025 · EDICIONES B</span></div>
+        <h4>Buena chica — Rachel Harrison</h4>
+        <p>Tres hermanas heredan la casa de su infancia, que su madre siempre juró que estaba poseída por un demonio.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge fic">FANTASMAS</span><span class="badge fecha">2025 · MINOTAURO</span></div>
+        <h4>Vienen cuando hace frío — Carlos Sisí</h4>
+        <p>Un hombre arruinado se va a vivir a un pueblo perdido de Canadá y los vecinos le avisan: en invierno, ellos vienen.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge fic">FANTASMAS</span><span class="badge fecha">2025 · DILATANDO MENTES</span></div>
+        <h4>La casa del exorcista — Nick Roberts</h4>
+        <p>Una familia compra una granja en Virginia y descubre en el sótano una habitación sellada con un pozo lleno de crucifijos: la casa fue de un exorcista.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">ASESINOS</span><span class="badge fecha">2025 · RESERVOIR BOOKS</span></div>
+        <h4>Imágenes extrañas — Uketsu</h4>
+        <p>Nueve dibujos raros, todos ligados a crímenes del pasado, esconden una única verdad escalofriante, y el lector hace de detective.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge fic">FANTASMAS</span><span class="badge fecha">2025 · MINOTAURO (SIN FECHA)</span></div>
+        <h4>Bat Eater and Other Names for Cora Zeng — Kylie Lee Baker</h4>
+        <p>Cora limpia escenas de crímenes en Nueva York, ve los fantasmas de las víctimas y persigue al asesino que mata mujeres asiáticas. Premio Shirley Jackson 2025 a la mejor novela. La edición en español está anunciada, sin fecha confirmada.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">SLASHER</span><span class="badge fecha">2025 · SOLO EN INGLÉS</span></div>
+        <h4>When the Wolf Comes Home — Nat Cassidy</h4>
+        <p>Un padre huye con su hijo pequeño de una criatura que los persigue sin descanso.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">SLASHER</span><span class="badge fecha">2025 · SOLO EN INGLÉS</span><span class="badge prox">MUY SANGRIENTO</span></div>
+        <h4>Breathe In, Bleed Out — Brian McAuley</h4>
+        <p>Hannah va a un retiro de bienestar en el desierto a curarse y un asesino empieza a matar a los asistentes uno a uno. Un slasher puro, pero muy sangriento.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">SLASHER</span></div>
+        <h4>«ALGUIEN» — J. N. Trujillo</h4>
+        <p>Slasher español, apuntado de antes.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge fic">FANTASMAS</span></div>
+        <h4>Cosamala — Alana S. Portero</h4>
+        <p>Terror gótico en la Guerra Civil: las brujas como resistencia.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge real">POLICIACA</span><span class="badge fecha">2025 · CONTRALUZ</span></div>
+        <h4>Aún no estoy muerta — Holly Jackson</h4>
+        <p>A Jet le quedan siete días de vida tras un ataque y tiene que descubrir quién intentó matarla antes de morir.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">ASESINOS</span><span class="badge fecha">2025 · SIRUELA</span></div>
+        <h4>Kuklinski — Ernesto Mallo</h4>
+        <p>La vida y la cabeza de Richard Kuklinski, el asesino en serie que decía haber matado a más de doscientas personas. Sin morbo ni gore.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge real">POLICIACA</span><span class="badge fecha">2025 · ALFAGUARA</span></div>
+        <h4>Jotadé — Santiago Díaz</h4>
+        <p>Tiran a dos hombres destripados desde un puente de la M-30 en Madrid, y el subinspector Jotadé, el único policía gitano de la comisaría, investiga.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge real">POLICIACA</span><span class="badge fecha">2026 · SALAMANDRA</span></div>
+        <h4>El rey de las cenizas — S. A. Cosby</h4>
+        <p>Roman vuelve a casa tras el accidente de su padre y encuentra a su hermano endeudado con criminales y a su hermana sosteniendo el negocio familiar, una funeraria.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge real">POLICIACA</span></div>
+        <h4>El hombre pájaro — Mo Hayder</h4>
+        <p>Un detective de Londres caza a un asesino en serie que mata mujeres. Pendiente de antes.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge real">POLICIACA</span></div>
+        <h4>Flores cortadas — Karin Slaughter</h4>
+        <p>Pendiente de antes.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge real">POLICIACA</span></div>
+        <h4>Hamits y el Intérprete — Felipe Henríquez</h4>
+        <p>Quiere buscarlo y terminarlo.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge fic">FANTASMAS</span><span class="badge fecha">1981 · SOLO EN INGLÉS · SOLO EN PAPEL</span></div>
+        <h4>The Seance — Joan Lowery Nixon</h4>
+        <p>Terror juvenil: una sesión de espiritismo que acaba en muerte. Premio Edgar. Sin traducción al español y sin ebook: solo en papel y en inglés.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge prox">PREVENTA · SALE EL 24/02/2027</span></div>
+        <h4>Peor que los dioses — Laura Díaz</h4>
+        <p>Preventa exclusiva en @libreriavaldorum y @alcalacomics. Edición limitada a solo 50 unidades.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- PELIS -->
+  <section id="pelis">
+    <h2>🎬 Pelis de terror<span class="bar"></span></h2>
+    <p class="sub">Estrenadas que molen o en cines. De qué va cada una, sin actores. Si están ahora o no, y en qué plataforma.</p>
+
+    <h3>🍿 En cines ahora</h3>
+    <div class="news">
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">CINES · DESDE EL 20/11</span></div>
+        <h4>Adolescencia, sexo y muerte en Campamento Miasma (2026)</h4>
+        <p>Una saga inventada de pelis de asesinatos en un campamento lleva tantas secuelas malas que nadie la quiere ver. Una joven cineasta recibe el encargo de resucitarla y va a buscar a la actriz de la primera entrega; lo que empieza como un rodaje se convierte en una historia de obsesión con un asesino suelto. Slasher con humor negro.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">CINES · DESDE EL 20/11</span></div>
+        <h4>Gummy (2026)</h4>
+        <p>Un asesino en serie sale de noche a buscar víctima y se fija en una joven en un bar de carretera. Cree que la tiene fácil, pero la cosa se da la vuelta y el cazador acaba siendo la presa. Thriller de terror español, tenso y con giro. Premiada en Sitges y Screamfest.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">CINES · DESDE EL 20/11</span></div>
+        <h4>Pinocho desatado (2026)</h4>
+        <p>El muñeco de madera en modo slasher. Cine cutre-divertido, del rollo serie Z.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">CINES · DESDE EL 14/11</span></div>
+        <h4>La larga marcha (2026)</h4>
+        <p>Cien chavales tienen que caminar sin parar o mueren, y solo sobrevive uno. La adaptación de la novela de Stephen King, muy bien valorada.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">CINES · DESDE EL 13/11</span></div>
+        <h4>Scrooge y los fantasmas de la Navidad (2026)</h4>
+        <p>El clásico cuento de Navidad convertido en historia de fantasmas: un hombre avaro y amargado recibe en una noche la visita de tres espíritus que le muestran su pasado, su presente y su futuro. Londres victoriano, fantasmas y una segunda oportunidad.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">CINES · DESDE EL 13/11</span></div>
+        <h4>Victorian Psycho (2026)</h4>
+        <p>Inglaterra, 1858. Una institutriz llega a una mansión apartada para educar a dos niños de una familia rica. Parece perfecta y encantadora, pero esconde comportamientos cada vez más perturbadores y violentos. Comedia negra gótica: asusta y hace reír a la vez.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">CINES · DESDE EL 6/11</span><span class="badge prox">OJO, PUEDE ESTAR SALIENDO DE ALGUNOS CINES</span></div>
+        <h4>Sacamantecas (2026)</h4>
+        <p>Vitoria, década de 1870, en plena guerra carlista. Varias mujeres aparecen asesinadas en el bosque y nace la leyenda del Sacamantecas, el primer asesino en serie documentado de España. La película sigue los crímenes y a la hermana de una de las víctimas, que no se conforma con el silencio de las autoridades.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">CINES · DESDE EL 6/11</span><span class="badge prox">OJO, PUEDE ESTAR SALIENDO DE ALGUNOS CINES</span></div>
+        <h4>Los ojos del Diablo (2026)</h4>
+        <p>Unos jóvenes se graban intentando demostrar que Dios existe invocando al demonio, como reto viral para conseguir visitas. La invocación sale mal y la cosa se les va de las manos. Terror de posesiones grabado cámara en mano como si fuera real, rodado en un antiguo hospital psiquiátrico.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">CINES · DESDE EL 6/11</span><span class="badge prox">OJO, PUEDE ESTAR SALIENDO DE ALGUNOS CINES</span></div>
+        <h4>11 (2026)</h4>
+        <p>Diez personas, ocho niños y dos monitores, quedan atrapadas en un refugio perdido de los Pirineos cuando una tormenta de nieve corta todos los accesos. Encerrados, sin salida y con la nieve cayendo, la tensión entre ellos crece y empiezan a pasar cosas.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge prox">PRÓXIMAMENTE EN CINES</span></div>
+        <h4>Sanguine — 27/11 · Five Nights at Freddy's 2 — 5/12</h4>
+        <p>«Sanguine» (Mejor Película en Sitges 2026): una médica residente empieza a sufrir en su propio cuerpo la misma enfermedad misteriosa que ven sus pacientes jóvenes. Body horror bastante gráfico. «Five Nights at Freddy's 2»: los animatrónicos salen de la pizzería a las calles.</p>
+      </article>
+    </div>
+
+    <h3>📺 En plataformas</h3>
+    <div class="news">
+      <article class="noticia">
+        <div class="meta"><span class="badge tec">NETFLIX · DESDE EL 24/10</span></div>
+        <h4>Weapons (2025)</h4>
+        <p>Una noche, a las 2:17 de la madrugada, todos los niños de una clase desaparecen de sus casas a la vez, menos uno. El pueblo entero se vuelca en buscarlos y las sospechas caen sobre todo el mundo. Misterio sobrenatural con tensión lenta; una de las pelis de terror más aplaudidas de 2025.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge tec">NETFLIX</span></div>
+        <h4>Frankenstein (2025)</h4>
+        <p>Un científico obsesionado con vencer a la muerte consigue dar vida a una criatura hecha con restos humanos. La criatura, abandonada y perseguida, busca a su creador para pedirle cuentas. Terror gótico clásico contado a lo grande, con mucho drama y atmósfera.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge tec">NETFLIX · DESDE EL 21/11</span></div>
+        <h4>Expediente Warren: El último rito (2025)</h4>
+        <p>Ed y Lorraine se enfrentan a su último caso. La cuarta entrega de los Warren.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge tec">NETFLIX</span></div>
+        <h4>Navidad Sangrienta (2025)</h4>
+        <p>Nueva versión de «Navidades negras», de Blumhouse: terror en Navidad.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge tec">HBO MAX · FILMIN · MOVISTAR PLUS+</span></div>
+        <h4>Backrooms (2026)</h4>
+        <p>Un joven cae por accidente a un lugar imposible: pasillos amarillos infinitos y vacíos, con el zumbido de las luces y algo que se mueve al fondo. No hay puertas ni salida, solo habitaciones que se repiten. Terror psicológico, muy inquietante, basado en el fenómeno viral de internet.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge tec">MOVISTAR PLUS+ · SKYSHOWTIME</span></div>
+        <h4>Scream 7 (2026)</h4>
+        <p>El asesino de la máscara vuelve, y esta vez va a por la familia de la protagonista original de la saga, que ahora es madre de una adolescente. Vuelven los asesinatos en el pueblo y las reglas del género: nadie está a salvo y cualquiera puede ser el asesino. Slasher clásico, séptima entrega.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge tec">MOVISTAR PLUS+</span></div>
+        <h4>Hokum (2026)</h4>
+        <p>Un escritor se aloja en una vieja posada irlandesa para terminar su libro y descubre que el lugar guarda una leyenda: una bruja que no perdona a quien duerme allí. Las noches en la posada se vuelven cada vez más raras y peligrosas. Terror de brujas con mucha atmósfera.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge tec">PRIME VIDEO · DESDE EL 30/10</span></div>
+        <h4>Apocalipsis Z: Nuevo mundo (2026)</h4>
+        <p>Segunda parte de la saga española de zombis: un grupo de supervivientes intenta abrirse camino por un mundo en ruinas buscando un lugar seguro. Zombis, acción y tensión, hecha en España.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge tec">PRIME VIDEO</span></div>
+        <h4>Noche de Paz, Noche de Horror (2025)</h4>
+        <p>Nueva versión del clásico con Papá Noel asesino.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge tec">DISNEY+</span></div>
+        <h4>Soulm8te (2026)</h4>
+        <p>Un viudo compra una robot acompañante con inteligencia artificial para no estar solo; la robot se vuelve posesiva y peligrosa.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge prox">ALQUILER · UNOS 4,99 €</span></div>
+        <h4>Obsesión (2026)</h4>
+        <p>Un chico tímido, enamorado de su mejor amiga desde niños, compra en una tienda esotérica un juguete que concede un deseo si lo rompes en dos. Pide que ella lo ame más que a nadie en el mundo. El deseo se cumple… y a partir de ahí todo se tuerce de forma cada vez más oscura. En alquiler en Filmin, Prime Video, Movistar Plus+ y Apple TV; también sigue en algunos cines.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge prox">ALQUILER DIGITAL · 12,99 €</span></div>
+        <h4>Insidious: Fuera del más allá (2026)</h4>
+        <p>Sexta entrega de la saga. Solo en alquiler digital por ahora, sin fecha en ninguna plataforma de suscripción en España.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- NOTICIAS -->
+  <section id="noticias">
+    <h2>📰 Noticias de terror<span class="bar"></span></h2>
+    <p class="sub">Novedades de terror, de lo más nuevo a lo más viejo. Solo terror.</p>
+    <div class="news">
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">TERROR · SERIES</span><span class="badge fecha">25/11/2026</span></div>
+        <h4>«Carrie» tendrá segunda temporada: Flanagan ya entregó el guion del primer capítulo</h4>
+        <p>Prime Video renovó la serie el 22/10 (la primera temporada fue nº 1 en más de 105 países). El rodaje apunta a 2027 y Flanagan la imagina como una historia de tres temporadas.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">TERROR · CINES</span><span class="badge fecha">5/12/2026</span></div>
+        <h4>«Five Nights at Freddy's 2» llega a los cines el 5 de diciembre</h4>
+        <p>Los animatrónicos salen de la pizzería a las calles. Vuelve Matthew Lillard. El tráiler ya está fuera.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">TERROR · KING</span><span class="badge fecha">24/11/2026</span></div>
+        <h4>«GTA VI» esconde un guiño a Pennywise, el payaso de «It»</h4>
+        <p>Un globo rojo en un ascensor de Vice City lleva a un payaso ensangrentado que se abalanza sobre el jugador.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">TERROR · CINE</span><span class="badge fecha">23/11/2026</span></div>
+        <h4>«Guerra Mundial Z 2» se rodará en 2027, según Brad Pitt</h4>
+        <p>Dirige Edward Berger y Pitt vuelve como Gerry Lane. Sin fecha de estreno.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">TERROR · CINE</span><span class="badge fecha">23/11/2026</span></div>
+        <h4>La nueva entrega de «Saw» apunta a 2028</h4>
+        <p>La dirige Mike P. Nelson, con James Wan y Leigh Whannell de productores. Sin título ni fecha concreta y sin confirmar si vuelve Tobin Bell.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">TERROR · CINES</span><span class="badge fecha">22/11/2026</span></div>
+        <h4>«The Third Parent» se estrena en cines de EE. UU. el 22 de enero de 2027</h4>
+        <p>Adapta los creepypastas de Elias Witherow, con Crispin Glover como Tommy Taffy. DeaPlaneta la estrenará en España próximamente.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">TERROR · STREAMING</span><span class="badge fecha">21/11/2026</span></div>
+        <h4>«Expediente Warren: El último rito» llega a Netflix España</h4>
+        <p>La cuarta entrega de los Warren (Ed y Lorraine se enfrentan a su último caso) aterriza en Netflix.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">TERROR · CINE</span><span class="badge fecha">20/11/2026</span></div>
+        <h4>Blumhouse anuncia 10 películas de terror para 2027</h4>
+        <p>«River» (15 ene), «La venganza de La Llorona» (26 feb), «El exorcista: Mártires» de Mike Flanagan (12 mar), «Blair Witch» (24 sep), «Sleepover» (10 oct), nueva «Paranormal Activity» (22 oct) y «Seasons» (11 dic).</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">TERROR · CÓMIC</span><span class="badge fecha">20/11/2026</span></div>
+        <h4>«Hellraiser: Hellbound Hearts», nuevo cómic que continúa las dos primeras películas</h4>
+        <p>BOOM! Studios, n.º 1 el 6 de enero de 2027: continúa la historia de las dos primeras películas de Hellraiser, décadas después.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">TERROR · CINES</span><span class="badge fecha">20/11/2026</span></div>
+        <h4>«Train to Busan» vuelve a los cines españoles el 9 de abril por su 10.º aniversario</h4>
+        <p>La peli coreana de zombis en un tren, de nuevo en pantalla grande.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">TERROR · CINE</span><span class="badge fecha">20/11/2026</span></div>
+        <h4>«Longlegs 2»: la continuación de Osgood Perkins llega a los cines el 14 de enero de 2028</h4>
+        <p>La continuación de «Longlegs» llega a los cines el 14 de enero de 2028. Maika Monroe confirma que Lee Harker no vuelve.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">TERROR · STREAMING</span><span class="badge fecha">20/11/2026</span></div>
+        <h4>«Onslaught», de Adam Wingard, llega a HBO Max el 22 de diciembre</h4>
+        <p>Ambientada en el mundo de «The Guest».</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">TERROR · CINE</span><span class="badge fecha">19/11/2026</span></div>
+        <h4>Primer avance de «Wolf Creek 3»: John Jarratt vuelve como Mick Taylor</h4>
+        <p>Estreno en cines de EE. UU. el 19 de marzo de 2027.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">TERROR · STREAMING</span><span class="badge fecha">18/11/2026</span></div>
+        <h4>«Red Snow»: un vampiro disfrazado de Papá Noel, en Shudder el 11 de diciembre</h4>
+        <p>Comedia de terror finlandesa: un vampiro se disfraza de Papá Noel para entrar en las casas y devorar familias.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">TERROR · KING</span><span class="badge fecha">15/11/2026</span></div>
+        <h4>El Exorcista: Mártires, de Flanagan, comparada con Seven tras los pases de prueba</h4>
+        <p>Los asistentes la describen como una de las películas más terroríficas jamás rodadas. Dura unas 2 h 20 y se estrena el 12 de marzo de 2027.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">TERROR · CINES</span><span class="badge fecha">14/11/2026</span></div>
+        <h4>«La larga marcha» (Stephen King) en cines</h4>
+        <p>Cien adolescentes caminan sin parar o mueren, solo sobrevive uno. Muy buenas críticas: una de las mejores películas del año.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">TERROR · CINE</span><span class="badge fecha">NOVIEMBRE 2026</span></div>
+        <h4>«El fugitivo» (The Running Man, Stephen King) en cines</h4>
+        <p>Un padre se apunta a un reality mortal para salvar a su hija enferma.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">TERROR · KING</span><span class="badge fecha">11/11/2026</span></div>
+        <h4>Stephen King revela el título de su próxima novela: «Anything for Holly»</h4>
+        <p>Será el último libro de la detective Holly Gibney y saldrá en 2027.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">TERROR · LIBROS</span><span class="badge fecha">9/11/2026</span></div>
+        <h4>«Progenie», de Jack Ketchum, en Carfax</h4>
+        <p>Diez años después de «Temporada baja», la Mujer (la caníbal superviviente) vuelve a Dead River. Terror duro de un clásico del género.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">TERROR · KING</span><span class="badge fecha">8/11/2026</span></div>
+        <h4>«The Institute» (El instituto, Stephen King), temporada 2, ya en marcha</h4>
+        <p>En MGM+ (en España, dentro de Prime Video); un episodio por semana hasta el 20/12. Luke y los niños con poderes psíquicos siguen huyendo del Instituto.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">TERROR · KING</span><span class="badge fecha">31/10/2026</span></div>
+        <h4>Especial sorpresa de «It: Bienvenidos a Derry» por Halloween</h4>
+        <p>HBO Max estrenó sin avisar «A Story of Derry», un capítulo de 30 minutos siglos antes de Pennywise, con los primeros encuentros con Eso. La T2 será en 1935 y se espera para finales de 2027.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">TERROR · CINE</span><span class="badge fecha">29/10/2026</span></div>
+        <h4>«Smile 3» es oficial</h4>
+        <p>Paramount sigue con la saga de la sonrisa siniestra, pero con cambio: la dirige David Bruckner y el guion es de Nick Antosca. Sin trama ni fecha.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">TERROR · CINE</span><span class="badge fecha">NOVIEMBRE 2026</span><span class="badge prox">SOLO RUMORES</span></div>
+        <h4>«The Mask»: solo rumores</h4>
+        <p>Circulan tráilers falsos hechos con IA en redes. Jim Carrey ha dicho que volvería solo con un buen guion y un director con visión. No hay nada oficial de ningún estudio.</p>
+      </article>
+      <article class="noticia">
+        <div class="meta"><span class="badge terror">TERROR · KING</span><span class="badge fecha">15/10/2026</span></div>
+        <h4>«Otros mundos» (El Talismán 3), de King y Peter Straub, ya en España</h4>
+        <p>Cierra la trilogía de El Talismán y la conecta con La Torre Oscura.</p>
+      </article>
+    </div>
+  </section>
+
+  <footer>Mis cosas — la página de Pablo. Libros, pelis y noticias de terror, cada cosa en su sitio.</footer>
+</div>
+</body>
+</html>
